@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+      body {
+        padding-top: 70px;
+      }
+    </style>
+  </head>
+
+<body>
+<div class='container'>
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    <span class="navbar-brand">McFeely Inventory</span>
+</nav>
+
+<form action="/add" method="post" role="form">
+    <div class="form-row">
+        <div class="col-auto">
+        <input type="text" class="form-control" placeholder="Item" name="description">
+        </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" placeholder="Quantity" name="quantity">
+        </div>
+        <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+<br />
+
+<table class='table table-sm'>
+  <thead>
+    <tr><th>Inventory</th></tr>
+  </thead>
+  <tbody>
+    {{range .}}
+    <tr><td><strong>{{ .Quantity }}</strong> : {{ .Description }}</td></tr>
+    {{ end }}
+  </tbody>
+</table>
+</table>
+
+</div>
+</body>
+</html>
